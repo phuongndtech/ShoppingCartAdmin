@@ -1,0 +1,30 @@
+﻿@model List<AminShoppingCart.Models.ViewModels.ProductCategoryViewModel>
+
+<div class="card-body">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Category Id</th>
+                <th scope="col">Product Id</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Category Name</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td scope="row">@item.CategoryId</td>
+                <th>@item.ProductId</th>
+                <td>@item.ProductName</td>
+                <td>@item.CategoryName</td>
+                <td>
+                    @Html.ActionLink("ViewDetail", "GetDetailVC", "ProductCategory", new { id = item.CategoryId }, new { @class = "btn btn-primary" })
+                    <a href="@Url.Action("DeleteVC","ProductCategory",new { categoryId= item.CategoryId, productId = item.ProductId})" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

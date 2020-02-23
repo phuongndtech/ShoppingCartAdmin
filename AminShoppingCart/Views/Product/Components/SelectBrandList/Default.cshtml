@@ -1,0 +1,7 @@
+﻿@model List<AminShoppingCart.Models.ViewModels.BrandViewModel>
+<select class="form-control" id="ddlBrandId" name="BrandId">
+    @foreach (var item in Model)
+    {
+        <option value="@item.Id">@item.Name</option>
+    }
+</select>

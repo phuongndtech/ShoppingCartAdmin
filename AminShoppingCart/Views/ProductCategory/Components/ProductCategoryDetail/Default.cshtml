@@ -1,0 +1,62 @@
+﻿@model List<AminShoppingCart.Models.ViewModels.ProductCategoryDetailViewModel>
+@{
+    Layout = "_Layout";
+}
+
+<body>
+    <div class="content-wrapper">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 text-dark">View Detail</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Product Catetgory</a></li>
+                            <li class="breadcrumb-item active">Detail</li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <section class="content">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Category Id</th>
+                                        <th scope="col">Product Id</th>
+                                        <th scope="col">Product Name</th>
+                                        <th scope="col">Category Name</th>
+                                        <th scope="col">Image</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td scope="row">@item.CategoryId</td>
+                                            <th>@item.ProductId</th>
+                                            <td>@item.ProductName</td>
+                                            <td>@item.CategoryName</td>
+                                            <td class="w-25">
+                                                <img src="https://sd3530images.blob.core.windows.net/image/@item.ImageFile" style="width:20%" />
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </section>
+        <!-- /.content -->
+    </div>
+</body>
